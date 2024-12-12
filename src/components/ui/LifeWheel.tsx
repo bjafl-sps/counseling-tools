@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useRef } from 'react';
+import { useLayoutEffect, useState, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Download, ClipboardCopy, CircleX, CircleCheck, CircleDashed} from 'lucide-react';
 import * as am5 from '@amcharts/amcharts5';
