@@ -328,9 +328,9 @@ const LifeWheel = () => {
   }, [chartDiv]);
 
   return (
-    <div className="flex flex-col lg:flex-col ">
+    <div className="flex flex-col">
         <div className="w-full ">
-            <div className="flex flex-row-reverse items-center bg-gray-100 px-4 py-2 rounded-md min-h-20 gap-2">
+            <div className="flex md:flex-row-reverse flex-col-reverse items-center bg-gray-100 px-4 py-2 rounded-md min-h-20 gap-2">
                 <Button 
                     className="flex items-center w-fit gap-2"
                     onClick={handleDownload}
@@ -359,7 +359,7 @@ const LifeWheel = () => {
         </div>
         <div 
             ref={setChartDiv} 
-            className="flex-1 max-w grow aspect-square min-w-[520px] " 
+            className="flex-1 max-w grow aspect-square min-w[460px] md:max-h-screen " 
         />
     </div>
   );
