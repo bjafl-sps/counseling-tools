@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState, useRef, useCallback, useMemo, useEffect } from 'react';
+import { useLayoutEffect, useState, useRef, useCallback, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Download, ClipboardCopy, CircleX, CircleCheck, CircleDashed } from 'lucide-react';
 import * as am5 from '@amcharts/amcharts5';
@@ -10,7 +10,6 @@ import am5themes_Material from '@amcharts/amcharts5/themes/Material';
 import { debounce } from 'lodash';
 
 import ErrorBoundary from './ErrorBoundary';
-import { TemplateAdapters } from '@amcharts/amcharts5/.internal/core/util/Template';
 
 // Types and Interfaces
 interface CategoryData {
@@ -263,7 +262,7 @@ const useChartSetup = (chartDiv: HTMLDivElement | null) => {
     xRenderer.labels.template.setAll({
       radius: 10,
     });
-    xRenderer.labels.template.adapters.add("text", (val, target) => {
+    xRenderer.labels.template.adapters.add("text", (_val, target) => {
       const width = target.root.width() ?? 600;
       if (width < 540){
         return "{categoryShort}";
